@@ -17,7 +17,7 @@ class GPT(commands.Cog):
                          icon_url="https://images-ext-2.discordapp.net/external/XaZD0LjdRFtLqJKRHD96hbM3Yrxo0Nr2bQrkz2yN7Uk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1027808278551461988/d9ce0c74f3aa9fb61e44fb9b186dd9bd.png")
         embed.add_field(name="Proverb Generator",
                         value=f"```{alice_answer} \n\n-missanthrope#0429```")
-        emoji = discord.utils.get(self, ctx.guild.emojis, name='ohmydog')
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.message.add_reaction(emoji)
         await ctx.channel.send(embed = embed)
 
@@ -31,7 +31,7 @@ class GPT(commands.Cog):
                          icon_url="https://images-ext-2.discordapp.net/external/XaZD0LjdRFtLqJKRHD96hbM3Yrxo0Nr2bQrkz2yN7Uk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1027808278551461988/d9ce0c74f3aa9fb61e44fb9b186dd9bd.png")
         embed.add_field(name="Nash AI Q&A",
                         value=f"```User: {question}\nNash: {nash_answer}```")
-        emoji = discord.utils.get(self, ctx.guild.emojis, name='ohmydog')
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.message.add_reaction(emoji)
         await ctx.channel.send(embed = embed)
 
@@ -45,7 +45,7 @@ class GPT(commands.Cog):
                          icon_url="https://images-ext-2.discordapp.net/external/XaZD0LjdRFtLqJKRHD96hbM3Yrxo0Nr2bQrkz2yN7Uk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1027808278551461988/d9ce0c74f3aa9fb61e44fb9b186dd9bd.png")
         embed.add_field(name="Blight AI Q&A",
                         value=f"```User: {question}\n{blight}: {blight_answer}```")
-        emoji = discord.utils.get(self, ctx.guild.emojis, name='ohmydog')
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.message.add_reaction(emoji)
         await ctx.channel.send(embed = embed)
 
@@ -65,7 +65,7 @@ class GPT(commands.Cog):
             height=512)
         # return content
         img.save("quote.png")
-        emoji = discord.utils.get(self, ctx.guild.emojis, name='ohmydog')
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.message.add_reaction(emoji)
 
         file = discord.File("quote.png", filename="quote.png")
@@ -83,7 +83,7 @@ class GPT(commands.Cog):
     async def infographic(self, ctx, *, input_topic):
         tagline = berlock_gpt.infographicGPT(input_topic)
         berlock_gpt.infographic_image(tagline)
-        emoji = discord.utils.get(self, ctx.guild.emojis, name='ohmydog')
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.message.add_reaction(emoji)
 
         file = discord.File("infographic.png", filename="infographic.png")
