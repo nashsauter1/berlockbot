@@ -7,11 +7,6 @@ class GPT(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(brief = "bye bye!") # we can also add application commands
-    async def goodbye(self, ctx):
-        await ctx.send('Berlock bye bye!')
-
-    
     @commands.command(brief = "missAInthrope proverbs")
     async def proverb(self, ctx):
         alice_answer = berlock_gpt.proverbGPT().strip()
