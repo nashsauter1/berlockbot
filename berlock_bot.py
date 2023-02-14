@@ -52,55 +52,11 @@ async def guess100(ctx, guess:int):
     else:
         await ctx.send(f"the number was {number}, get berlocked")
 
-
 @bot.command(brief = "pong")
 async def ping(ctx):
     emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
     await ctx.message.add_reaction(emoji)
     await ctx.channel.send("Pong")
-
-@bot.command()
-async def popularloner(ctx):
-    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-    await ctx.message.add_reaction(emoji)
-    await ctx.channel.send("A dude who's an athlete, hot and everyone thinks he actually gets lots of pussy, but he's actually chill, kinda vibes, really vibey when stoned and can't get no pussy")
-
-@bot.command()
-async def indie(ctx):
-    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-    await ctx.message.add_reaction(emoji)
-    await ctx.channel.send("imagine how much happier the world would be if more people chucked on a comfy fit (i personally like to go for the granola dad look), grabbed an iced oat latte and went to watch the sunset with their fav indie tunes blasting in the background.")
-
-@bot.command()
-async def normal(ctx):
-    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-    await ctx.message.add_reaction(emoji)
-    await ctx.channel.send("is there still room for normal guys in society? i’m not a skater, alt boy, indie, jock, artist,… i’m just….. normal …i wear baseball hats… i wear hoodies … just a normal guy. And somehow i feel like i just…, don’t belong")
-
-@bot.command()
-async def O(ctx):
-    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-    await ctx.message.add_reaction(emoji)
-    await ctx.channel.send("NGUYEN!")
-
-@bot.command()
-async def statement(ctx):
-    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-    await ctx.message.add_reaction(emoji)
-    await ctx.channel.send('What the fuck, why the fuck, and as for who the fuck it’s 100% Alice Sauter"')
-
-@bot.command()
-async def cannibal(ctx):
-    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-    await ctx.message.add_reaction(emoji)
-    await ctx.channel.send('```"Yes! It’ll be a meal full of delicious cruelty and greed" -Big Money\'s Redemption#6969```')
-
-@bot.command()
-async def sirens(ctx):
-    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-    await ctx.message.add_reaction(emoji)
-    await ctx.channel.send('```"what\'s with the sirens? Is that world\'s end?  I want to be the mahatma of that siren voice, tell me how I should go about being a better person. What else can we do besides eating her?" -ExPeri3nce#0034```')
-
 
 # GPT
 import berlock_gpt
