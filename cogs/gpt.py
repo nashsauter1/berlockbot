@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from . import berlock_gpt
+import berlock_gpt
 from Quote2Image import Convert, ImgObject
 
 class GPT(commands.Cog):
