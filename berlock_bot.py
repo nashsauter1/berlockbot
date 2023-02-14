@@ -66,6 +66,30 @@ async def popularloner(ctx):
     await ctx.channel.send("A dude who's an athlete, hot and everyone thinks he actually gets lots of pussy, but he's actually chill, kinda vibes, really vibey when stoned and can't get no pussy")
 
 @bot.command()
+async def indie(ctx):
+    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+    await ctx.message.add_reaction(emoji)
+    await ctx.channel.send("imagine how much happier the world would be if more people chucked on a comfy fit (i personally like to go for the granola dad look), grabbed an iced oat latte and went to watch the sunset with their fav indie tunes blasting in the background.")
+
+@bot.command()
+async def normal(ctx):
+    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+    await ctx.message.add_reaction(emoji)
+    await ctx.channel.send("is there still room for normal guys in society? i’m not a skater, alt boy, indie, jock, artist,… i’m just….. normal …i wear baseball hats… i wear hoodies … just a normal guy. And somehow i feel like i just…, don’t belong")
+
+@bot.command()
+async def O(ctx):
+    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+    await ctx.message.add_reaction(emoji)
+    await ctx.channel.send("NGUYEN!")
+
+@bot.command()
+async def statement(ctx):
+    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+    await ctx.message.add_reaction(emoji)
+    await ctx.channel.send('What the fuck, why the fuck, and as for who the fuck it’s 100% Alice Sauter"')
+
+@bot.command()
 async def cannibal(ctx):
     emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
     await ctx.message.add_reaction(emoji)
