@@ -6,10 +6,11 @@ import os
 from Quote2Image import Convert, ImgObject
 import random
 from datetime import datetime
-# from io import BytesIO
-# import asyncio
+import dotenv
 
-BOT_TOKEN = os.getenv("DISCORD_BOT_KEY")
+dotenv.load_dotenv()
+
+BOT_TOKEN = str(os.getenv("DISCORD_BOT_KEY"))
 
 intents = discord.Intents.default()
 intents.members = True

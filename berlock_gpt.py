@@ -1,9 +1,11 @@
 # GPT
 import os
 import openai
+import dotenv
 
+dotenv.load_dotenv()
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = str(os.getenv("OPENAI_API_KEY"))
 
 
 def proverbGPT():
