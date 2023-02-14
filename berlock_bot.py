@@ -231,4 +231,6 @@ async def infographic(ctx, *, input_topic):
     await ctx.channel.send(file = file, embed = embed)
 
 
+bot.load_extension('cogs.memes')
+
 bot.run(BOT_TOKEN)
