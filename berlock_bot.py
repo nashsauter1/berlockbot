@@ -101,7 +101,7 @@ async def connect_nodes():
     password='berlock'
   ) # create a nodes
 
-@bot.slash_command(name="play")
+@bot.bridge_command(name="play")
 async def play(ctx, search: str):
   vc = ctx.voice_client # define our voice client
 
@@ -118,6 +118,11 @@ async def play(ctx, search: str):
 
   await vc.play(song) # play the song
   await ctx.respond(f"Now playing: `{vc.source.title}`") # return a message
+
+@bot.bridge_command(name="stop")
+async def stop(ctx):
+    vc = ctx.voice_client
+    await vc.disconnect()
 
 @bot.event
 async def on_ready():
