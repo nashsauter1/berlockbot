@@ -1,7 +1,7 @@
 # Discord bot that sends a message to a discord channel when a certain event occurs
 # Author: Nash Sauter
 import discord
-from discord.ext import commands
+from discord.ext import commands, bridge
 import os
 from Quote2Image import Convert, ImgObject
 import random
@@ -20,7 +20,8 @@ intents.message_content = True
 activity = discord.Activity(name='Yoku no "Berlock"', type=discord.ActivityType.watching)
 # client = discord.Client(intents = intents)
 
-bot = commands.Bot(command_prefix='$', intents = intents, activity = activity)
+bot = bridge.Bot(command_prefix='$', intents = intents, activity = activity)
+
 embed = ""
 
 @bot.event
@@ -42,7 +43,7 @@ async def confession(ctx, message):
     date_time = datetime.now()
     await channel.send(f"**Confession at {date_time}**\n> {message}")
 
-@bot.command(brief = "guess a number from 1 to 100")
+@bot.bridge_command(brief = "guess a number from 1 to 100")
 async def guess100(ctx, guess:int):
     number = random.randint(1, 100)
     if guess == number:
