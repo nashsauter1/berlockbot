@@ -119,10 +119,49 @@ async def play(ctx, search: str):
   await vc.play(song) # play the song
   await ctx.respond(f"Now playing: `{vc.source.title}`") # return a message
 
+@bot.bridge_command(name="playpartial")
+async def playpartial(ctx, search: str):
+  vc = ctx.voice_client # define our voice client
+
+  if not vc: # check if the bot is not in a voice channel
+    vc = await ctx.author.voice.channel.connect(cls=wavelink.Player) # connect to the voice channel
+  if ctx.author.voice.channel.id != vc.channel.id: # check if the bot is not in the voice channel
+    return await ctx.respond("You must be in the same voice channel as the bot.") # return an error message
+
+  partial = wavelink.PartialTrack(query=search, cls=wavelink.YouTubeTrack)
+  track = await vc.play(partial)
+  await ctx.respond(f'**Now playing:** `{track.title}`')
+
+@bot.bridge_command(name="queue")
+async def queue(ctx, search: str):
+  vc = ctx.voice_client # define our voice client
+
+  if not vc: # check if the bot is not in a voice channel
+    vc = await ctx.author.voice.channel.connect(cls=wavelink.Player) # connect to the voice channel
+  if ctx.author.voice.channel.id != vc.channel.id: # check if the bot is not in the voice channel
+    return await ctx.respond("You must be in the same voice channel as the bot.") # return an error message
+
+  song = await wavelink.YouTubeTrack.search(query=search, return_first=True) # search for the song
+  if not song: # check if the song is not found
+    return await ctx.respond("No song found.") # return an error message
+
+  await vc.queue.put(song)
+  await ctx.respond(f'**Queued:** `{song.title}`')
+
+
+@bot.bridge_command(name="skip")
+async def skip(ctx):
+  vc = ctx.voice_client # define our voice client
+  track = await vc.queue.get()
+  await vc.play(track)
+
 @bot.bridge_command(name="stop")
 async def stop(ctx):
     vc = ctx.voice_client
     await vc.disconnect()
+    await ctx.respond("Player has stopped")
+
+
 
 @bot.event
 async def on_ready():
