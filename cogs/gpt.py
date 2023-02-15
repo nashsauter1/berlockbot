@@ -80,7 +80,7 @@ class GPT(commands.Cog):
 
 
     @bridge.bridge_command(brief = "Infographic generator based on a topic")
-    async def infographic(self, ctx, *, input_topic):
+    async def infographic(self, ctx, input_topic: str):
         tagline = berlock_gpt.infographicGPT(input_topic)
         berlock_gpt.infographic_image(tagline)
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
