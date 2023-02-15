@@ -18,8 +18,8 @@ class GPT(commands.Cog):
         embed.add_field(name="Proverb Generator",
                         value=f"```{alice_answer} \n\n-missanthrope#0429```")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-        await ctx.message.add_reaction(emoji)
         await ctx.respond(embed = embed)
+        await ctx.message.add_reaction(emoji)
 
     @bridge.bridge_command(brief = "Nash AI Q&A")
     async def asknash(self, ctx, question):
