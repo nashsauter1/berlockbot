@@ -62,7 +62,7 @@ async def sus(ctx):
         members.append(member)
     random_member = random.choice(members)
     await ctx.message.add_reaction(emoji)
-    await ctx.respond(f"{random_member} is sus!")
+    await ctx.respond(f"**{random_member}** is sus!")
 
 @bot.bridge_command(brief = "Generates an anonymous quote")
 async def quote(ctx, quote_input):
