@@ -31,11 +31,7 @@ async def on_ready():
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send("get owned (command not recognized)")
-
-@bot.slash_command(name = "hello", description = "Say hello to the bot")
-async def hello(ctx):
-    await ctx.respond("berlock")
+        await ctx.respond("get owned (command not recognized)")
 
 @bot.slash_command(name = "confession", description = "Spill your deepest secrets")
 async def confession(ctx, message):
@@ -55,9 +51,9 @@ async def guess100(ctx, guess:int):
 async def ping(ctx):
     emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
     await ctx.message.add_reaction(emoji)
-    await ctx.channel.send("Pong")
+    await ctx.respond("Pong")
 
-@bot.command(brief = "Generates an anonymous quote")
+@bot.bridge_command(brief = "Generates an anonymous quote")
 async def quote(ctx, quote_input):
     bg=ImgObject(image="white.jpg", brightness=100, blur=2)
     img=Convert(
@@ -74,7 +70,7 @@ async def quote(ctx, quote_input):
     img.save("quote.png")
     emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
     await ctx.message.add_reaction(emoji)
-    await ctx.channel.send(file=discord.File('quote.png'))
+    await ctx.respond(file=discord.File('quote.png'))
 
 @bot.message_command(name="Turn into a quote")
 async def quotify(ctx, message: discord.Message):

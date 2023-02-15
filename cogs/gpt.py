@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands, bridge
 import berlock_gpt
 from Quote2Image import Convert, ImgObject
 
@@ -19,7 +19,7 @@ class GPT(commands.Cog):
                         value=f"```{alice_answer} \n\n-missanthrope#0429```")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.message.add_reaction(emoji)
-        await ctx.channel.send(embed = embed)
+        await ctx.respond(embed = embed)
 
     @commands.command(brief = "Nash AI Q&A")
     async def asknash(self, ctx, question):
@@ -33,7 +33,7 @@ class GPT(commands.Cog):
                         value=f"```User: {question}\nNash: {nash_answer}```")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.message.add_reaction(emoji)
-        await ctx.channel.send(embed = embed)
+        await ctx.respond(embed = embed)
 
     @commands.command(brief = "Takes User ID and question as input")
     async def askblight(self, ctx, blight, *, question):
@@ -47,7 +47,7 @@ class GPT(commands.Cog):
                         value=f"```User: {question}\n{blight}: {blight_answer}```")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.message.add_reaction(emoji)
-        await ctx.channel.send(embed = embed)
+        await ctx.respond(embed = embed)
 
     @commands.command(brief = "Image version of proverb")
     async def proverb_img(self, ctx):
@@ -76,7 +76,7 @@ class GPT(commands.Cog):
                          icon_url="https://images-ext-2.discordapp.net/external/XaZD0LjdRFtLqJKRHD96hbM3Yrxo0Nr2bQrkz2yN7Uk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1027808278551461988/d9ce0c74f3aa9fb61e44fb9b186dd9bd.png")
         embed.set_image(url="attachment://quote.png")
         embed.add_field(name="Proverb Generator", value = "")
-        await ctx.channel.send(file = file, embed = embed)
+        await ctx.respond(file = file, embed = embed)
 
 
     @commands.command(brief = "Infographic generator based on a topic")
@@ -94,7 +94,7 @@ class GPT(commands.Cog):
                          icon_url="https://images-ext-2.discordapp.net/external/XaZD0LjdRFtLqJKRHD96hbM3Yrxo0Nr2bQrkz2yN7Uk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1027808278551461988/d9ce0c74f3aa9fb61e44fb9b186dd9bd.png")
         embed.set_image(url="attachment://infographic.png")
         embed.add_field(name="Infographic Generator", value = "")
-        await ctx.channel.send(file = file, embed = embed)
+        await ctx.respond(file = file, embed = embed)
 
 def setup(bot): # this is called by Pycord to setup the cog
     bot.add_cog(GPT(bot)) # add the cog to the bot
