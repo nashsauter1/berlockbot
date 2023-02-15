@@ -7,7 +7,7 @@ class GPT(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @bridge.bridge_command(brief = "missAInthrope proverbs")
+    @commands.command(brief = "missAInthrope proverbs")
     async def proverb(self, ctx):
         alice_answer = berlock_gpt.proverbGPT().strip()
         embed = discord.Embed(title="Blight AI",
@@ -32,8 +32,8 @@ class GPT(commands.Cog):
         embed.add_field(name="Nash AI Q&A",
                         value=f"```User: {question}\nNash: {nash_answer}```")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-        await ctx.message.add_reaction(emoji)
         await ctx.respond(embed = embed)
+        await ctx.message.add_reaction(emoji)
 
     @bridge.bridge_command(brief = "Takes User ID and question as input")
     async def askblight(self, ctx, blight, *, question):
@@ -46,10 +46,10 @@ class GPT(commands.Cog):
         embed.add_field(name="Blight AI Q&A",
                         value=f"```User: {question}\n{blight}: {blight_answer}```")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-        await ctx.message.add_reaction(emoji)
         await ctx.respond(embed = embed)
+        await ctx.message.add_reaction(emoji)
 
-    @bridge.bridge_command(brief = "Image version of proverb")
+    @commands.command(brief = "Image version of proverb")
     async def proverb_img(self, ctx):
         alice_answer = berlock_gpt.proverbGPT()
         bg=ImgObject(image="white.jpg", brightness=100, blur=2)
@@ -66,7 +66,6 @@ class GPT(commands.Cog):
         # return content
         img.save("quote.png")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-        await ctx.message.add_reaction(emoji)
 
         file = discord.File("quote.png", filename="quote.png")
         embed = discord.Embed(title="Blight AI",
@@ -77,6 +76,7 @@ class GPT(commands.Cog):
         embed.set_image(url="attachment://quote.png")
         embed.add_field(name="Proverb Generator", value = "")
         await ctx.respond(file = file, embed = embed)
+        await ctx.message.add_reaction(emoji)
 
 
     @bridge.bridge_command(brief = "Infographic generator based on a topic")
@@ -84,7 +84,6 @@ class GPT(commands.Cog):
         tagline = berlock_gpt.infographicGPT(input_topic)
         berlock_gpt.infographic_image(tagline)
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-        await ctx.message.add_reaction(emoji)
 
         file = discord.File("infographic.png", filename="infographic.png")
         embed = discord.Embed(title="Blight AI",
@@ -95,6 +94,7 @@ class GPT(commands.Cog):
         embed.set_image(url="attachment://infographic.png")
         embed.add_field(name="Infographic Generator", value = "")
         await ctx.respond(file = file, embed = embed)
+        await ctx.message.add_reaction(emoji)
 
 def setup(bot): # this is called by Pycord to setup the cog
     bot.add_cog(GPT(bot)) # add the cog to the bot
