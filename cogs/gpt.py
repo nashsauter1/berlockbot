@@ -7,7 +7,7 @@ class GPT(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(brief = "missAInthrope proverbs")
+    @bridge.bridge_command(brief = "missAInthrope proverbs")
     async def proverb(self, ctx):
         alice_answer = berlock_gpt.proverbGPT().strip()
         embed = discord.Embed(title="Blight AI",
@@ -21,7 +21,7 @@ class GPT(commands.Cog):
         await ctx.message.add_reaction(emoji)
         await ctx.respond(embed = embed)
 
-    @commands.command(brief = "Nash AI Q&A")
+    @bridge.bridge_command(brief = "Nash AI Q&A")
     async def asknash(self, ctx, question):
         nash_answer = berlock_gpt.asknashGPT(question).strip()
         embed = discord.Embed(title="Blight AI",
@@ -35,7 +35,7 @@ class GPT(commands.Cog):
         await ctx.message.add_reaction(emoji)
         await ctx.respond(embed = embed)
 
-    @commands.command(brief = "Takes User ID and question as input")
+    @bridge.bridge_command(brief = "Takes User ID and question as input")
     async def askblight(self, ctx, blight, *, question):
         blight_answer = berlock_gpt.askblightGPT(blight, question).strip()
         embed = discord.Embed(title="Blight AI",
@@ -49,7 +49,7 @@ class GPT(commands.Cog):
         await ctx.message.add_reaction(emoji)
         await ctx.respond(embed = embed)
 
-    @commands.command(brief = "Image version of proverb")
+    @bridge.bridge_command(brief = "Image version of proverb")
     async def proverb_img(self, ctx):
         alice_answer = berlock_gpt.proverbGPT()
         bg=ImgObject(image="white.jpg", brightness=100, blur=2)
@@ -79,7 +79,7 @@ class GPT(commands.Cog):
         await ctx.respond(file = file, embed = embed)
 
 
-    @commands.command(brief = "Infographic generator based on a topic")
+    @bridge.bridge_command(brief = "Infographic generator based on a topic")
     async def infographic(self, ctx, *, input_topic):
         tagline = berlock_gpt.infographicGPT(input_topic)
         berlock_gpt.infographic_image(tagline)
