@@ -33,10 +33,6 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.respond("get owned (command not recognized)")
 
-@bot.slash_command(name = "hello", description = "Say hello to the bot")
-async def hello(ctx):
-    await ctx.respond("berlock")
-
 @bot.slash_command(name = "confession", description = "Spill your deepest secrets")
 async def confession(ctx, message):
     channel = bot.get_channel(1074944168843034704)
@@ -57,7 +53,7 @@ async def ping(ctx):
     await ctx.message.add_reaction(emoji)
     await ctx.respond("Pong")
 
-@bot.command(brief = "Generates an anonymous quote")
+@bot.bridge_command(brief = "Generates an anonymous quote")
 async def quote(ctx, quote_input):
     bg=ImgObject(image="white.jpg", brightness=100, blur=2)
     img=Convert(
