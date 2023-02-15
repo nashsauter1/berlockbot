@@ -31,7 +31,7 @@ async def on_ready():
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send("get owned (command not recognized)")
+        await ctx.respond("get owned (command not recognized)")
 
 @bot.slash_command(name = "hello", description = "Say hello to the bot")
 async def hello(ctx):
