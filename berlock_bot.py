@@ -96,9 +96,9 @@ async def connect_nodes():
 
   await wavelink.NodePool.create_node(
     bot=bot,
-    host='narco.buses.rocks',
-    port=2269,
-    password='glasshost1984'
+    host='0.0.0.0',
+    port=2333,
+    password='berlock'
   ) # create a nodes
 
 @bot.slash_command(name="play")
