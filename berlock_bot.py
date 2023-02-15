@@ -69,8 +69,8 @@ async def quote(ctx, quote_input):
     # return content
     img.save("quote.png")
     emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
-    await ctx.message.add_reaction(emoji)
     await ctx.respond(file=discord.File('quote.png'))
+    await ctx.message.add_reaction(emoji)
 
 @bot.message_command(name="Turn into a quote")
 async def quotify(ctx, message: discord.Message):
@@ -87,7 +87,6 @@ async def quotify(ctx, message: discord.Message):
         height=512)
     # return content
     img.save("quote.png")
-    await ctx.respond(file=discord.File('quote.png'))
 
 bot.load_extension('cogs.memes')
 bot.load_extension('cogs.gpt')
