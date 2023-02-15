@@ -54,6 +54,16 @@ async def ping(ctx):
     await ctx.message.add_reaction(emoji)
     await ctx.respond("Pong")
 
+@bot.command(brief = "sus")
+async def sus(ctx):
+    emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+    members = []
+    async for member in ctx.guild.fetch_members(limit=150):
+        members.append(member)
+    random_member = random.choice(members)
+    await ctx.message.add_reaction(emoji)
+    await ctx.respond(f"{random_member} is sus!")
+
 @bot.bridge_command(brief = "Generates an anonymous quote")
 async def quote(ctx, quote_input):
     bg=ImgObject(image="white.jpg", brightness=100, blur=2)
