@@ -47,9 +47,9 @@ async def confession(ctx, message):
 async def guess100(ctx, guess:int):
     number = random.randint(1, 100)
     if guess == number:
-        await ctx.send(f"THE NUMBER WAS {number} BERLOCK BERLOCK BERLOCK!")
+        await ctx.respond(f"THE NUMBER WAS {number} BERLOCK BERLOCK BERLOCK!")
     else:
-        await ctx.send(f"the number was {number}, get berlocked")
+        await ctx.respond(f"the number was {number}, get berlocked")
 
 @bot.command(brief = "pong")
 async def ping(ctx):
