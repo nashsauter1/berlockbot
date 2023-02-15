@@ -26,7 +26,7 @@ def proverbGPT():
 
 def infographicGPT(topic):
     response = openai.Completion.create(
-        model="text-davinci-003",
+        model="text-curie-001",
         # prompt=f'{prompt_user}',
         prompt=f"Write the text for the crazy title slide of a outrageous, satirical, and wildly exagerrated Instagram social justice infographic. Try to connect the topic to things similar to (but not limited to) imperialism, oppression, white saviors, gentrification, communism, the prison industrial complex, and/or gender theory. Keep the text under 10 words and in all lowercase with no quotation marks, no colons, and no punctuation. The topic of the infographic is {topic}",
         max_tokens=50,
