@@ -37,7 +37,7 @@ class GPT(commands.Cog):
 
     @bridge.bridge_command(brief = "CATify")
     async def catify(self, ctx, text):
-        cat_text = berlock_gpt.catGPT(text).strip()
+        cat_text = berlock_gpt.catGPT(text)
         embed = discord.Embed(title="Blight AI",
                               url="https://zombo.com",
                           colour=0xe81feb)

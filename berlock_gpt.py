@@ -29,7 +29,7 @@ def catGPT(text):
         model="text-davinci-edit-001",
         input=text,
         instruction="Briefly rewrite this text in a cute, silly tone of voice and add a ton various kawaii cat kaomojis such as ( ̿–ᆺ ̿–), (₌♥ᆽ♥₌), =^._.^= ∫, and  (●Φ ౪ Φ●).",
-        temperature=2,
+        temperature=1,
         n=1,
     )
     return response.choices[0].text
