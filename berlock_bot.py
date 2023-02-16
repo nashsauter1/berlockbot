@@ -100,7 +100,7 @@ async def quotify(ctx, message: discord.Message):
         height=512)
     # return content
     img.save("quote.png")
-    await ctx.send(file=discord.File('quote.png'))
+    await ctx.respond(file=discord.File('quote.png'))
 
 bot.load_extension('cogs.memes')
 bot.load_extension('cogs.gpt')

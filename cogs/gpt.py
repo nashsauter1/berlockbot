@@ -49,7 +49,7 @@ class GPT(commands.Cog):
         await ctx.respond(embed = embed)
         await ctx.message.add_reaction(emoji)
 
-    @commands.message_command(brief = "CATify message")
+    @commands.message_command(name = "CATify message")
     async def catify_message(self, ctx, text: discord.Message):
         cat_text = berlock_gpt.catGPT(text)
         embed = discord.Embed(title="Blight AI",
@@ -59,7 +59,7 @@ class GPT(commands.Cog):
                          icon_url="https://images-ext-2.discordapp.net/external/XaZD0LjdRFtLqJKRHD96hbM3Yrxo0Nr2bQrkz2yN7Uk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1027808278551461988/d9ce0c74f3aa9fb61e44fb9b186dd9bd.png")
         embed.add_field(name="Catify =^._.^=",
                         value=f"```{cat_text}\n\n -{message.author.name}cat```")
-        await ctx.send(embed = embed)
+        await ctx.respond(embed = embed)
 
     @bridge.bridge_command(brief = "Takes User ID and question as input")
     async def askblight(self, ctx, blight, *, question):
