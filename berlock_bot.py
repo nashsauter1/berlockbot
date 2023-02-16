@@ -29,7 +29,7 @@ embed = ""
 async def on_ready():
     print(f"{bot.user} is ready and online!")
     channel = bot.get_channel(896581994685812788)
-    await channel.send("**Berlock bot is up and running!*")
+    await channel.send("**Berlock bot is up and running!**")
 
 @bot.event
 async def on_command_error(ctx, error):
