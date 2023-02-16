@@ -28,6 +28,7 @@ def catGPT(text):
     response = openai.Completion.create(
         model="text-curie-001",
         prompt=f"The following is a not-cute block of text followed by a cute silly uwu cat version of the same text.\n--------\nNot-Cute Text:\n{text}\n--------\nCute Cat Text:\n",
+        max_tokens=50,
         temperature=1,
         presence_penalty=2,
         frequency_penalty=2,
