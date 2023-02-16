@@ -25,11 +25,12 @@ def proverbGPT():
     return response.choices[0].text
 
 def catGPT(text):
-    response = openai.Edit.create(
-        model="text-davinci-edit-001",
-        input=text,
-        instruction="Briefly rewrite this text in a cute, silly tone of voice and add a ton various kawaii cat kaomojis such as ( ̿–ᆺ ̿–), (₌♥ᆽ♥₌), =^._.^= ∫, and  (●Φ ౪ Φ●).",
+    response = openai.Completion.create(
+        model="text-curie-001",
+        prompt=f"The following is a not-cute block of text followed by a cute silly uwu cat version of the same text.\n--------\nNot-Cute Text:\n{text}\n--------\nCute Cat Text:\n",
         temperature=1,
+        presence_penalty=2,
+        frequency_penalty=2,
         n=1,
     )
     return response.choices[0].text
