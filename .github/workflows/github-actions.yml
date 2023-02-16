@@ -21,7 +21,7 @@ jobs:
           instance-ids: ${{ secrets.INSTANCE_ID }}
 
           working-directory: /home/ubuntu/berlockbot
-          command: pkill -f berlock_bot.py; source venv/bin/activate; python berlock_bot.py &
+          command: pkill -f berlock_bot.py; git pull; source venv/bin/activate; python berlock_bot.py &
           comment: Launched berlock bot
 
       # Catch SSM outputs
