@@ -15,4 +15,4 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
-          script: cd ~/berlockbot; ls; pkill -9 -f "python berlock_bot.py"; git pull; source venv/bin/activate; python berlock_bot.py &
+          script: cd ~/berlockbot; ls; pkill -9 -f "python berlock_bot.py" > /dev/null 2>&1; git pull; source venv/bin/activate; python berlock_bot.py &
