@@ -16,4 +16,4 @@ jobs:
           key: ${{ secrets.KEY }}
           # script: cd ~/berlockbot; ls; pkill -9 -f "python" > /dev/null 2>&1; git pull; source venv/bin/activate; python berlock_bot.py &
           # script: cd ~/berlockbot; ls; git pull; source venv/bin/activate; python berlock_bot.py &
-          script: ./restartbot.sh
+          script: ./restartbot.sh; exit
