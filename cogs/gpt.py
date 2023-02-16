@@ -51,7 +51,7 @@ class GPT(commands.Cog):
 
     @commands.message_command(name = "CATify message")
     async def catify_message(self, ctx, text: discord.Message):
-        cat_text = berlock_gpt.catGPT(text)
+        cat_text = berlock_gpt.catGPT(text.content)
         embed = discord.Embed(title="Blight AI",
                               url="https://zombo.com",
                           colour=0xe81feb)
