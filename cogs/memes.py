@@ -16,6 +16,12 @@ class Memes(commands.Cog):
         await ctx.respond("A dude who's an athlete, hot and everyone thinks he actually gets lots of pussy, but he's actually chill, kinda vibes, really vibey when stoned and can't get no pussy")
 
     @commands.command()
+    async def girlsbelike(self, ctx):
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+        await ctx.message.add_reaction(emoji)
+        await ctx.respond("Girls be like: we hate all men so we turn lesbian.\nBoys be like: uno reverse! *turns gay*\nGirls: shocked pikachu face\nSperm trying to get into eachother: confused stonks\nGoku: has sex with Wednesday\nWednesday: prenancy 100\nMe: only in Ohio!")
+
+    @commands.command()
     async def indie(self, ctx):
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.message.add_reaction(emoji)
