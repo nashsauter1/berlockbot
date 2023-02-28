@@ -57,5 +57,11 @@ class Memes(commands.Cog):
         await ctx.message.add_reaction(emoji)
         await ctx.respond('```"what\'s with the sirens? Is that world\'s end?  I want to be the mahatma of that siren voice, tell me how I should go about being a better person. What else can we do besides eating her?" -ExPeri3nce#0034```')
 
+    @commands.command()
+    async def pinklemonade(self, ctx):
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+        await ctx.message.add_reaction(emoji)
+        await ctx.respond(':yum:yummy!:yum:')
+
 def setup(bot): # this is called by Pycord to setup the cog
     bot.add_cog(Memes(bot)) # add the cog to the bot
