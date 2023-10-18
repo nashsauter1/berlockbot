@@ -76,5 +76,11 @@ class Memes(commands.Cog):
         await ctx.respond("Ok nobody cares. I'm 16 and I like to listen to everything from jazz to flamenco to cuban music of all tipes to peruvian guitar music to mongol throat singing and country and mariachis and some old italian songs and military anthems from Spain and Italy and some old catalan music and very old russian tunes with acordeon and argentinian and uruguayan guitar music amd boleros and all kind of stuff. But do I feel the need to come here and tell the world how classy I am? No. Do you know why? Cause it doesn't matter and nobody cares.")
         await ctx.respond("No hate.")
 
+    @commands.command()
+    async def mozart(self, ctx):
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+        await ctx.message.add_reaction(emoji)
+        await ctx.respond("It utterly vexes me how Mozart is still put into the same tier as Beethoven/Bach when his magnum opus was partly ghostwritten by Sussmayr. Frankly it pisses me off to a degree that Mozart is still put up on a pedestal and treated as this genius sent down by God when he put out a FRACTION of what Bach put out and also didn’t innovate for shit. He deserves to be the punching bag of the classical music community. Liking Mozart is like liking club music. It sounds like a decent tune at a surface level, but it’s not meant to be listened to in a vacuum. It’s meant to supplement something that actually has substance. The fact that he only wrote 2 pieces in minor scale should tell you everything you need to know about it this guy.")
+
 def setup(bot): # this is called by Pycord to setup the cog
     bot.add_cog(Memes(bot)) # add the cog to the bot
