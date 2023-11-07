@@ -82,5 +82,11 @@ class Memes(commands.Cog):
         await ctx.message.add_reaction(emoji)
         await ctx.respond("It utterly vexes me how Mozart is still put into the same tier as Beethoven/Bach when his magnum opus was partly ghostwritten by Sussmayr. Frankly it pisses me off to a degree that Mozart is still put up on a pedestal and treated as this genius sent down by God when he put out a FRACTION of what Bach put out and also didn’t innovate for shit. He deserves to be the punching bag of the classical music community. Liking Mozart is like liking club music. It sounds like a decent tune at a surface level, but it’s not meant to be listened to in a vacuum. It’s meant to supplement something that actually has substance. The fact that he only wrote 2 pieces in minor scale should tell you everything you need to know about it this guy.")
 
+    @commands.command()
+    async def runescape(self, ctx):
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+        await ctx.message.add_reaction(emoji)
+        await ctx.respond("I used to play only 30 hours of osrs a week until I took reddits advice. You all told me to go to a therapist cause I played too much. Well I went to a therapist and he didn't say I played too much! He diagnosed me with ADHD. Now I'm on 40 mg of Adderall a day and haven't missed a tick in at least 2 years. I may now play around 80 hours a week, but its all good cause I can focus the whole time. I do have an appointment to see a specialist about wrist and hand pain, but I'm not worried because I'm sure the pain is just due to my ADHD. Anyways thank you reddit. I can't put my appreciation into words. Without you I never would've realized my goal of 200 mil all skills")
+
 def setup(bot): # this is called by Pycord to setup the cog
     bot.add_cog(Memes(bot)) # add the cog to the bot
