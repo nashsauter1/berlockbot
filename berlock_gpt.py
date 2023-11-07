@@ -28,10 +28,10 @@ def catGPT(text):
     response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct",
         prompt=f"The following is a not-cute block of text followed by a cute silly uwu cat version of the same text.\n--------\nNot-Cute Text:\n{text}\n--------\nCute Cat Text:\n",
-        max_tokens=200,
+        max_tokens=75,
         temperature=1,
-        presence_penalty=2,
-        frequency_penalty=2,
+        presence_penalty=0,
+        frequency_penalty=0,
         n=1,
     )
     return response.choices[0].text
@@ -41,10 +41,10 @@ def infographicGPT(topic):
         model="gpt-3.5-turbo-instruct",
         # prompt=f'{prompt_user}',
         prompt=f"Write the text for the crazy title slide of a outrageous, satirical, and wildly exagerrated Instagram social justice infographic. Try to connect the topic to things similar to (but not limited to) imperialism, oppression, white saviors, gentrification, communism, the prison industrial complex, and/or gender theory. Keep the text under 10 words and in all lowercase with no quotation marks, no colons, and no punctuation. The topic of the infographic is {topic}",
-        max_tokens=200,
-        temperature=0.95,
-        presence_penalty=2,
-        frequency_penalty=2,
+        max_tokens=75,
+        temperature=1,
+        presence_penalty=0,
+        frequency_penalty=0,
         n=1,
         # stop=[] 
     )
