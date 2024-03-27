@@ -8,7 +8,7 @@ class GPT(commands.Cog):
         self.bot = bot
 
     @commands.message_command(brief = "cat")
-    async def test(ctx, text):
+    async def cat(self, ctx, text):
         await ctx.send(newcatGPT(text))
 
     @bridge.bridge_command(brief = "CATify")
