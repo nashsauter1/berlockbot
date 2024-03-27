@@ -2,6 +2,16 @@
 import os
 import openai
 
+def newcatGPT(text):
+    completion = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are an assistant meant to turn the following not-cute block of text into a cute silly uwu cat version of the same text.  Use an extreme amount of uwu cute speak."},
+                {"role": "user", "content": f"'''{text}'''"}
+                ]
+    )
+    return completion.choices[0].message.content
+
 def proverbGPT():
     response = openai.Completion.create(
         model="curie:ft-dowland-corp-2023-02-09-07-49-13",
