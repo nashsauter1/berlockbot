@@ -2,7 +2,6 @@
 import os
 import openai
 import dotenv
-aiclient = OpenAI()
 
 dotenv.load_dotenv()
 
@@ -38,7 +37,7 @@ def catGPT(text):
     return response.choices[0].text
 
 def newcatGPT(text):
-    response = aiclient.chat.completions.create(
+    response = openai.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are an assistant meant to turn the following not-cute block of text into a cute silly uwu cat version of the same text."},
