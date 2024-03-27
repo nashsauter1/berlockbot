@@ -49,7 +49,7 @@ def newcatGPT(text):
         frequency_penalty=0,
         n=1
     )
-    return response.choices[0].message
+    return response
 
 response = client.chat.completions.create(
   model="gpt-3.5-turbo",
