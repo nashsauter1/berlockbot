@@ -2,6 +2,8 @@
 import os
 import openai
 
+client = OpenAI()
+
 def newcatGPT(text):
     completion = client.chat.completions.create(
             model="gpt-3.5-turbo",
