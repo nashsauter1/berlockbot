@@ -9,7 +9,10 @@ class GPT(commands.Cog):
 
     @commands.message_command(brief = "cat")
     async def cat(self, ctx, text):
-        await ctx.send(newcatGPT(text))
+        cat_text = berlock_gpt.newcatGPT(text)
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+        await ctx.respond(cat_text)
+        await ctx.message.add_reaction(emoji)
 
     @bridge.bridge_command(brief = "CATify")
     async def catify(self, ctx, text):
