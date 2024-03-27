@@ -3,7 +3,6 @@ import os
 import openai
 client = OpenAI()
 
-
 # Images Generation
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 
