@@ -7,6 +7,10 @@ class GPT(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    @bot.command(brief = "cat")
+    async def test(ctx, text):
+        await ctx.send(newcatGPT(text))
+
     @bridge.bridge_command(brief = "CATify")
     async def catify(self, ctx, text):
         cat_text = berlock_gpt.newcatGPT(text)
