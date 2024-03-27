@@ -47,7 +47,7 @@ def newcatGPT(text):
         temperature=1,
         n=1
     )
-    return response
+    return response.choices[0].message
 
 response = client.chat.completions.create(
   model="gpt-3.5-turbo",
