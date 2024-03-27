@@ -1,8 +1,9 @@
 # GPT
 import os
 import openai
+from openai import OpenAI
 
-client = openai()
+client = OpenAI()
 
 def newcatGPT(text):
     completion = client.chat.completions.create(
