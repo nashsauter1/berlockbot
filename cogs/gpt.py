@@ -7,7 +7,7 @@ class GPT(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @bot.command(brief = "cat")
+    @commands.message_command(brief = "cat")
     async def test(ctx, text):
         await ctx.send(newcatGPT(text))
 
