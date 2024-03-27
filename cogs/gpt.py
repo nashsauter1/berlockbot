@@ -7,7 +7,7 @@ class GPT(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.message_command(brief = "cat")
+    @bridge.bridge_command(brief = "cat")
     async def cat(self, ctx, text):
         cat_text = berlock_gpt.newcatGPT(text)
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
