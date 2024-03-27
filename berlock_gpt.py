@@ -1,12 +1,7 @@
 # GPT
 import os
 import openai
-import dotenv
-
-dotenv.load_dotenv()
-
-openai.api_key = str(os.getenv("OPENAI_API_KEY"))
-
+client = OpenAI()
 
 def proverbGPT():
     response = openai.Completion.create(
@@ -35,6 +30,9 @@ def catGPT(text):
         n=1,
     )
     return response.choices[0].text
+
+def newcatGPT(text):
+    response = open
 
 def infographicGPT(topic):
     response = openai.Completion.create(
