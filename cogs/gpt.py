@@ -16,7 +16,7 @@ class GPT(commands.Cog):
         embed.set_author(name="Berlock Bot",
                          icon_url="https://images-ext-2.discordapp.net/external/XaZD0LjdRFtLqJKRHD96hbM3Yrxo0Nr2bQrkz2yN7Uk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1027808278551461988/d9ce0c74f3aa9fb61e44fb9b186dd9bd.png")
         embed.add_field(name="Catify =^._.^=",
-                        value=f"```{cat_text}```")
+                        value=f"```test```")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.respond(embed = embed)
         await ctx.message.add_reaction(emoji)
