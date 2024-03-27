@@ -50,7 +50,7 @@ async def guess100(ctx, guess:int):
     else:
         await ctx.respond(f"the number was {number}, get berlocked")
 
-@bot.command(brief = "pong")
+@bot.command(brief = "pingpong")
 async def ping(ctx):
     emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
     await ctx.message.add_reaction(emoji)
