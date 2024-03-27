@@ -36,6 +36,31 @@ def catGPT(text):
     )
     return response.choices[0].text
 
+def newcatGPT(text):
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are an assistant meant to turn the following not-cute block of text into a cute silly uwu cat version of the same text."},
+            {"role": "user", "content": f"{text}"}
+            ],
+        max_tokens=75,
+        temperature=1,
+        presence_penalty=0,
+        frequency_penalty=0,
+        n=1
+    )
+    return response.choices[0].message
+
+response = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Who won the world series in 2020?"},
+    {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+    {"role": "user", "content": "Where was it played?"}
+  ]
+)
+
 def infographicGPT(topic):
     response = openai.Completion.create(
         model="gpt-3.5-turbo-instruct",
