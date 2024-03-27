@@ -40,7 +40,7 @@ class GPT(commands.Cog):
                         value=f"```{cat_text}\n\n -{text.author.name}cat```")
         await ctx.respond(embed = embed)
 
-    @commands.message_command(name = "CATify message")
+    @commands.message_command(name = "CATify message 2")
     async def catify_message2(self, ctx, text: discord.Message):
         cat_text = berlock_gpt.newcatGPT(text.content)
         await ctx.respond(cat_text)
