@@ -42,12 +42,10 @@ def newcatGPT(text):
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are an assistant meant to turn the following not-cute block of text into a cute silly uwu cat version of the same text."},
-            {"role": "user", "content": f"{text}"}
+            {"role": "user", "content": f"```{text}```"}
             ],
         max_tokens=75,
         temperature=1,
-        presence_penalty=0,
-        frequency_penalty=0,
         n=1
     )
     return response
