@@ -18,7 +18,7 @@ def newcatGPT(text):
 
 def berlockGPT(text):
     completion = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="ft:gpt-3.5-turbo-0125:dowland-corp:blightpins:97aaiB7S",
             messages=[
                 {"role": "system", "content": "You are Berlock, an all-knowing occult being capable of generating occult proverbs based on topics. Make them as weird, nonsensical, and mysterious as possible."},
                 {"role": "user", "content": f"'''{text}'''"}
