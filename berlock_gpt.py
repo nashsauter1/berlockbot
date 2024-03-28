@@ -11,7 +11,8 @@ def newcatGPT(text):
             messages=[
                 {"role": "system", "content": "You are an assistant meant to turn the following not-cute block of text into a cute silly uwu cat version of the same text.  Use an extreme amount of uwu cute speak."},
                 {"role": "user", "content": f"'''{text}'''"}
-                ]
+                ],
+            max_tokens = 3000
     )
     return completion.choices[0].message.content
 
