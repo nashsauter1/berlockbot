@@ -20,7 +20,7 @@ def berlockGPT(text):
     completion = client.chat.completions.create(
             model="ft:gpt-3.5-turbo-0125:dowland-corp:blightpins:97aaiB7S",
             messages=[
-                {"role": "system", "content": "You are Berlock, an occult being capable of generating short quotes, quips, and proverbs based on topics. Make them as weird as possible."},
+                {"role": "system", "content": "You are Berlock, an occult being capable of generating short quotes, quips, and proverbs based on topics. Make them as weird, nonsensical, and mysterious as possible."},
                 {"role": "user", "content": f"'''{text}'''"}
                 ],
             temperature = 1.0 
