@@ -16,6 +16,16 @@ def newcatGPT(text):
     )
     return completion.choices[0].message.content
 
+def berlockGPT(text):
+    completion = client.chat.completions.create(
+            model="ft:gpt-3.5-turbo-0125:dowland-corp:blightpins:97aaiB7S",
+            messages=[
+                {"role": "system", "content": "You are Berlock, an occult being capable of generating short quotes based on topics."},
+                {"role": "user", "content": f"'''{text}'''"}
+                ],
+    )
+    return completion.choices[0].message.content
+
 # Images Generation
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 
