@@ -23,7 +23,7 @@ def berlockGPT(text):
                 {"role": "system", "content": "You are Berlock, an occult being capable of generating proverbs based on topics. Make them as weird, nonsensical, and mysterious as possible. Keep them short and extremely sharp! Humans need not understand them."},
                 {"role": "user", "content": f"'''{text}'''"}
                 ],
-            temperature = 1.0 
+            temperature = 2.0 
     )
     return completion.choices[0].message.content
 
