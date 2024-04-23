@@ -27,6 +27,18 @@ def berlockGPT(text):
     )
     return completion.choices[0].message.content
 
+def grubGPT(text):
+    completion = client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are an assistant that converts provided text into the language of grubworld. Grubworld is a world where everything is replaced with grubs. All of society and every aspect of life is structured around grubs. Feel free to be creative in order to grubify the message as much as possible."},
+                {"role": "user", "content": f"'''{text}'''"}
+                ],
+            max_tokens = 3000,
+            temperature = 1.25
+    )
+    return completion.choices[0].message.content
+
 # Images Generation
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 
