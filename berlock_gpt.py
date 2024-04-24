@@ -35,7 +35,7 @@ def grubGPT(text):
                 {"role": "user", "content": f"'''{text}'''"}
                 ],
             max_tokens = 3000,
-            temperature = 1.25
+            temperature = 1.02
     )
     return completion.choices[0].message.content
 
