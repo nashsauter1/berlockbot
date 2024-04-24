@@ -16,7 +16,7 @@ class GPT(commands.Cog):
         embed.set_author(name="Berlock Bot",
                          icon_url="https://images-ext-2.discordapp.net/external/XaZD0LjdRFtLqJKRHD96hbM3Yrxo0Nr2bQrkz2yN7Uk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1027808278551461988/d9ce0c74f3aa9fb61e44fb9b186dd9bd.png")
         embed.add_field(name="Catify =^._.^=",
-                        value=f"```{cat_text}```")
+                        value=f"{cat_text}")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.respond(embed = embed)
         await ctx.message.add_reaction(emoji)
@@ -42,7 +42,7 @@ class GPT(commands.Cog):
         embed.set_author(name="Berlock Bot",
                          icon_url="https://images-ext-2.discordapp.net/external/XaZD0LjdRFtLqJKRHD96hbM3Yrxo0Nr2bQrkz2yN7Uk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1027808278551461988/d9ce0c74f3aa9fb61e44fb9b186dd9bd.png")
         embed.add_field(name="Berlock's Wisdom",
-                        value=f"```{user_text}```")
+                        value=f"{user_text}")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.respond(embed = embed)
         await ctx.message.add_reaction(emoji)
@@ -56,7 +56,7 @@ class GPT(commands.Cog):
         embed.set_author(name="Berlock Bot",
                          icon_url="https://images-ext-2.discordapp.net/external/XaZD0LjdRFtLqJKRHD96hbM3Yrxo0Nr2bQrkz2yN7Uk/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1027808278551461988/d9ce0c74f3aa9fb61e44fb9b186dd9bd.png")
         embed.add_field(name="Grubworld",
-                        value=f"```{grub_text}```")
+                        value=f"{grub_text}")
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.respond(embed = embed)
         await ctx.message.add_reaction(emoji)
@@ -74,6 +74,21 @@ class GPT(commands.Cog):
         emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
         await ctx.respond(embed = embed)
         await ctx.message.add_reaction(emoji)
+
+    @bridge.bridge_command(brief = "Lord Grubbington's Wisdom")
+    async def grubhard(self, ctx, text):
+        grub_text = berlock_gpt.grubhardGPT(text)
+        embed = discord.Embed(title="The Words of Grubhard Nixongrub",
+                              url="https://zombo.com",
+                          colour=0x6A4A3F)
+        embed.set_author(name="Former President Nixongrub",
+                         icon_url="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8aa98588-c6d6-4070-84dc-1377a903e813/d85tkr7-6eaf66f5-2025-40d9-af31-9fb3c5009ef6.jpg/v1/fit/w_600,h_690,q_70,strp/grub_cartoon___terranem_nematodes_by_growngraphic_d85tkr7-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhhYTk4NTg4LWM2ZDYtNDA3MC04NGRjLTEzNzdhOTAzZTgxM1wvZDg1dGtyNy02ZWFmNjZmNS0yMDI1LTQwZDktYWYzMS05ZmIzYzUwMDllZjYuanBnIiwiaGVpZ2h0IjoiPD02OTAiLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLndhdGVybWFyayJdLCJ3bWsiOnsicGF0aCI6Ilwvd21cLzhhYTk4NTg4LWM2ZDYtNDA3MC04NGRjLTEzNzdhOTAzZTgxM1wvZ3Jvd25ncmFwaGljLTQucG5nIiwib3BhY2l0eSI6OTUsInByb3BvcnRpb25zIjowLjQ1LCJncmF2aXR5IjoiY2VudGVyIn19.OlcG-B4QcphqEIIushaz9TkLNSX41qmL-jy4oeNzHww")
+        embed.add_field(name="Grubworld",
+                        value=f"{grub_text}")
+        emoji = discord.utils.get(ctx.guild.emojis, name='ohmydog')
+        await ctx.respond(embed = embed)
+        await ctx.message.add_reaction(emoji)
+
 
 def setup(bot): # this is called by Pycord to setup the cog
     bot.add_cog(GPT(bot)) # add the cog to the bot
