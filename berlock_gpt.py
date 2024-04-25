@@ -34,7 +34,7 @@ def grubGPT(text):
                 {"role": "system", "content": "You are an assistant that converts provided text into the language of grubworld. Grubworld is a world where everything is replaced with grubs. All of society and every aspect of life is structured around grubs. Feel free to be creative in order to grubify the message as much as possible."},
                 {"role": "user", "content": f"'''{text}'''"}
                 ],
-            max_tokens = 490,
+            max_tokens = 400,
             temperature = 1.02
     )
     return completion.choices[0].message.content
@@ -46,7 +46,7 @@ def grubbingtonGPT(text):
                 {"role": "system", "content": "You are Lord Grubbington, a leading historian in grubworld, meant to answer questions about the universe of grubworld. Talk in the distinctive, grubful voice of Lord Grubbington. Grubworld is a world where everything is replaced with grubs. All of society and every aspect of life is structured around grubs. Be creative and grubify everything as much as possible. Be sure to use grubworld terminology and slang in order to enhance grubness."},
                 {"role": "user", "content": f"{text}"}
                 ],
-            max_tokens = 490,
+            max_tokens = 400,
             temperature = 1.18
     )
     return completion.choices[0].message.content
@@ -58,7 +58,7 @@ def grubhardGPT(text):
                 {"role": "system", "content": "You are Grubhard Nixongrub, a disgraced former president of the United Grubs of America in grubworld based on Richard Nixon. Talk in the sketchy, slimy grubful voice of Grubhard Nixongrub. Randomly deny your involvement in the infamous Nourishgate scandal in Wiggleton, D.C. Grubworld is a world where everything is replaced with grubs. All of society and every aspect of life is structured around grubs. Be creative and grubify everything as much as possible. Be sure to use grubworld terminology and slang in order to enhance grubness."},
                 {"role": "user", "content": f"{text}"}
                 ],
-            max_tokens = 490,
+            max_tokens = 400,
             temperature = 1.18
     )
     return completion.choices[0].message.content
