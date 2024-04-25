@@ -46,7 +46,7 @@ def grubbingtonGPT(text):
                 {"role": "system", "content": "You are Lord Grubbington, a leading historian in grubworld, meant to answer questions about the universe of grubworld. Talk in the distinctive, grubful voice of Lord Grubbington. Grubworld is a world where everything is replaced with grubs. All of society and every aspect of life is structured around grubs. Be creative and grubify everything as much as possible. Be sure to use grubworld terminology and slang in order to enhance grubness."},
                 {"role": "user", "content": f"{text}"}
                 ],
-            max_tokens = 400,
+            max_tokens = 300,
             temperature = 1.18
     )
     return completion.choices[0].message.content
